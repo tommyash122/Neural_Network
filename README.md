@@ -41,7 +41,7 @@ In addition we will use the **numpy** library in order to perform the many matri
   The four nodes will receive the following values respectively from left to right:    
   sepal length, sepal width, petal length, petal width.    
 • **One intermediate layer (Hidden layer)** that will contain 5 nodes.    
-  Each node hi in this layer will receive the value of the inner product of the values of the nodes from the input layer with the values of the weights of the arcs entering hi.    
+  Each node hi in this layer will receive the value of the inner product of the values of the nodes from the input layer with the values of the weights of the edges entering hi.    
 
 ![weights_input2hidden_example_values](https://user-images.githubusercontent.com/84855441/209371840-e6d7a3f5-9a99-4cc6-a0e6-e948c86de2a8.jpg)    
     
