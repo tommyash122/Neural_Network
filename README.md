@@ -20,7 +20,7 @@ https://en.wikipedia.org/wiki/Iris_flower_data_set
 Link to a short video explaining the running of the Neural Network, viewing the outputs differences and explanation of how I get the data.(Hebrew)    
 https://youtu.be/_gGUMTpsKPc    
 
-Check out some data [graphs](#Let's-look-at-some-graphs)    
+Check out some data [graphs](Let's-look-at-some-graphs)    
 
 ## System requirements 
 1) Python 3.4 and above installed.
