@@ -37,19 +37,19 @@ In addition we will use the **numpy** library in order to perform the many matri
 There is a linear trend line made up of red dots indicating the decreasing trend of the error rate during training which indicates that the network is improving in its detection ability over the period.
 
 ### The network architecture    
-• **The input layer** will have 4 nodes, as the number of attributes that must be entered for each iris type flower that we have.
+• **The input layer** will have **4** nodes, as the number of attributes that must be entered for each iris type flower that we have.
   Into this layer will be inserted the input which, as mentioned, is the attributes of each iris flower found in the given iris data set.    
   The four nodes will receive the following values respectively from left to right:    
   sepal length, sepal width, petal length, petal width.    
-• **One intermediate layer (Hidden layer)** that will contain 5 nodes.    
+• **One intermediate layer (Hidden layer)** that will contain **5** nodes.    
   Each node hi in this layer will receive the value of the inner product of the values of the nodes from the input layer with the values of the weights of the edges entering hi.    
 
 ![weights_input2hidden_example_values](https://user-images.githubusercontent.com/84855441/209371840-e6d7a3f5-9a99-4cc6-a0e6-e948c86de2a8.jpg)    
     
     
-• **The output layer** that will contain 3 nodes as the number of classes to be classified.    
+• **The output layer** that will contain **3** nodes as the number of classes to be classified.    
 The output layer will produce the output that the neural network infers, based on the data it currently has, which is the correct class for the features of the input fed to it.    
-• Every node from layer x is connected to every node in the next layer x+1 except for the nodes in the output layer, the edges that connect the nodes will be called the means of this connection and these will be initialized for the first time with random values ("weights") in the value range [1,-1].
+• Every node from layer **x** is connected to every node in the next layer **x+1** except for the nodes in the output layer, the edges that connect the nodes will be called the means of this connection and these will be initialized for the first time with random values ("weights") in the value range **[1,-1]**.    
 • **Our activation function** will be the sigmoid function and we will also use its derivative to calculate the error function.    
 ![image](https://user-images.githubusercontent.com/84855441/209396895-c6e72684-83fb-4a02-ba77-7523c50f64fc.png)    
 ![image](https://user-images.githubusercontent.com/84855441/209396914-5fa9aa66-f22d-4446-94d8-5f9681fd67a9.png)    
@@ -58,20 +58,22 @@ The output layer will produce the output that the neural network infers, based o
 ### Parameters of the optimization process:    
 • Our system training approach will be the gradient descent method, the error calculation will be done by subtracting the output values from the value of the correct answer.    
 We multiply the obtained value by the sigmoid derivative function at the point in order to reduce the value of the error function.    
-We will multiply the value obtained by the learning rate coefficient chosen to be 0.15.
-• The size of our batch will be 80% of the size of the total input and is 150*0.8 = 120, that is, in each Epoch we will train the network using 120 inputs, so that in each round they will chosen randomly, and we will test the network with the remaining 30 inputs.    
+We will multiply the value obtained by the learning rate coefficient chosen to be **0.15**.    
+• The size of our batch will be **80%** of the size of the total input and is **150*0.8 = 120**, that is, in each Epoch we will train the network using **120** inputs, so that in each round they will chosen randomly, and we will test the network with the remaining **30** inputs.    
 In each such round, the training and testing groups are randomly selected from the entire database in our possession.    
-• The size of the Epochs variable = 200, which means that we will run the entire data group 200 times, as mentioned above, each time our batch size will be 120.    
-• As mentioned above, the learning rate will be 0.15.    
+• The size of the Epochs variable = **200**, which means that we will run the entire data group **200** times, as mentioned above, each time our batch size will be **120**.    
+• As mentioned above, the learning rate will be **0.15**.    
 
 ### Output while running the system for training:
 ![image](https://user-images.githubusercontent.com/84855441/209398379-cc33e550-b318-45bd-bd42-64ea490a54ae.png)    
+    
 You can clearly see the increase in the degree of accuracy (train, test) of the system throughout the running of the epochs.    
+    
 **Epoch 1 (train, test) = (35.83%, 23.33%)**    
 ...    
 **Epoch 10 (train, test) = (85.00%, 86.67%)**    
 ...    
-**Epoch 200 (train, test) = (95.00%, 96.67%) ** 
+**Epoch 200 (train, test) = (95.00%, 96.67%)**    
     
 Hence our degree of accuracy will remain, according to this run according to the Epoch data **200**, with a degree of accuracy on new data of **96.67%**.    
 We will also notice that from epoch **10** to **200** the degree of accuracy rises and falls but remains stable around **95%**.    
@@ -89,10 +91,10 @@ In addition, it seems that the fourth input does not exactly match any flower fr
 ## Let's look at some graphs
 ### Network training error rate across epochs    
 ![image](https://user-images.githubusercontent.com/84855441/209400115-436f1e62-45f3-4a2c-b3f5-6522c6071f2a.png)    
-It can be seen that the error rates for the training throughout the periods starts high compared to the rest, it is about **0.3** in the first epoch but immediately after that it drops significantly to the 0.05 area and from there it rises and falls but remains at an average of **0.053**.    
+It can be seen that the error rates for the training throughout the periods starts high compared to the rest, it is about **0.3** in the first epoch but immediately after that it drops significantly to the **0.05** area and from there it rises and falls but remains at an average of **0.053**.    
 There is a linear trend line made up of red dots indicating the decreasing trend of the error rate during training which indicates that the network is improving in its detection ability over the period.    
 #### Training set statistics:    
-Average 0.053, median 0.041, minimum value 0, maximum value 0.341.    
+Average **0.053**, median **0.041**, minimum value **0**, maximum value **0.341**.    
 
 ### Network testing error rate across epochs
 ![image](https://user-images.githubusercontent.com/84855441/209400356-282afc2e-045b-449a-83e8-3cf440d0d9e3.png)    
@@ -101,7 +103,7 @@ only forward-propagation whose role is to feed as an input to the network and ge
 Hence this group is used for "new" data that the system was not intended for and their role is to really test the degree of learning.    
 There is a linear trend line made up of red dots indicating the decreasing trend of the error rate during training which indicates that the network is improving in its detection ability over the period.    
 #### Testing set statistics:    
-Average 0.053, median 0.033, minimum value 0, maximum value 0.433.    
+Average **0.053**, median **0.033**, minimum value **0**, maximum value **0.433**.    
 
 ### Network error rate across epochs    
 ![image](https://user-images.githubusercontent.com/84855441/209400987-c637f7ba-580a-4e98-8ec4-994890dc4495.png)    
@@ -117,7 +119,7 @@ As mentioned this diagram visually shows the two graphs of the training and the 
 For this chart I dimmed the graphs themselves in the chart and created trendlines for each graph.    
 The orange trend line represents the graph of the test    
 The blue trend line represents the training graph.    
-It can be clearly seen that there is a downward trend in the level of error throughout the measurement period and it can even be seen that the degree of error in the test group falls below the degree of error in the training group from epoch 73 or so, meaning in other words the system independently identifies inputs that it does not recognize with a degree of error better than that on inputs that it does recognize.    
+It can be clearly seen that there is a downward trend in the level of error throughout the measurement period and it can even be seen that the degree of error in the test group falls below the degree of error in the training group from epoch **73** approximately, meaning in other words the system independently identifies inputs that it does not recognize with a degree of error better than that on inputs that it does recognize.    
 I will point out that the degree of this difference is negligible, which means the difference is not particularly large, which indicates that the system learned the data well and we did not observe a case of overfitting here, as as we know, there is some point where the system becomes too dependent on the training inputs and does not know how to recognize other inputs independently, which is not our case. :)    
 
 
